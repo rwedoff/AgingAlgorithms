@@ -26,7 +26,8 @@ void agingAlgor(int numPages, int bits, int *list, int listLength) {
     /*
      * Initalizes the list the simulates the aging algorithm
      */
-    //Create array of pages
+    //Create
+    // array of pages
     Page pageList[numPages];
     //Result = 2^n
     long result = 1;
@@ -66,6 +67,7 @@ void agingAlgor(int numPages, int bits, int *list, int listLength) {
     }
 
     //Print off inital list
+        printf("\n");
         printList(pageList,numPages);
 
     //Cycle through the list, and simluate aging algorithm
@@ -96,7 +98,7 @@ void agingAlgor(int numPages, int bits, int *list, int listLength) {
                     pageList[j].age = pageList[j].age / 2;
             }
             //Selects the min page to be removed
-            int min = result+1;
+            long min = result+1;
             int pageListIndex = 0;
             for(int a = 0; a < numPages; a++){
                 if(pageList[a].age <= min){
@@ -121,7 +123,7 @@ void agingAlgor(int numPages, int bits, int *list, int listLength) {
 
 void printList(Page pageList[], int length){
     for(int i = 0; i < length; i++){
-        printf("mem %d %d\t", pageList[i].pageNum, pageList[i].age);
+        printf("mem %d %lu\t", pageList[i].pageNum, pageList[i].age);
         printf("\tfault %d\n", pageList[i].fault);
     }
     printf("\n\n");
