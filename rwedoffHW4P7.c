@@ -68,7 +68,11 @@ void agingAlgor(int numPages, int bits, int *list, int listLength) {
 
     //Print off inital list
         printf("\n");
-        printList(pageList,numPages);
+    printf("List length %d\n", numPages);
+        if(listLength < numPages)
+            printList(pageList,listLength);
+        else
+            printList(pageList,numPages);
 
     //Cycle through the list, and simluate aging algorithm
     bool inList = false;
